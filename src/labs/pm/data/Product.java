@@ -25,9 +25,9 @@ import static java.math.RoundingMode.HALF_UP;
  */
 public class Product {
 
-    private int id;
-    private String name;
-    private BigDecimal price;
+    private int id; //Default value 0
+    private String name; //Default value null
+    private BigDecimal price = BigDecimal.ZERO; //Default value null. Intialized so that getDiscount doesn't present NullPointerException at runtime
     
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
 
