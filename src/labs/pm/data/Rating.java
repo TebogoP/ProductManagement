@@ -30,6 +30,31 @@ package labs.pm.data;
  
 public enum Rating {
     
+     /**
+     * Product not yet rated.
+     */
+    NOT_RATED("\u2606\u2606\u2606\u2606\u2606"),
+    /**
+     * Product rated as one star.
+     */
+    ONE_STAR("\u2605\u2606\u2606\u2606\u2606"),
+    /**
+     * Product rated as two stars.
+     */
+    TWO_STAR("\u2605\u2605\u2606\u2606\u2606"),
+    /**
+     * Product rated as three stars.
+     */
+    THREE_STAR("\u2605\u2605\u2605\u2606\u2606"),
+    /**
+     * Product rated as four stars.
+     */
+    FOUR_STAR("\u2605\u2605\u2605\u2605\u2606"),
+    /**
+     * Product rated as five stars.
+     */
+    FIVE_STAR("\u2605\u2605\u2605\u2605\u2605");
+    
     
      private String stars;
      /**
