@@ -30,4 +30,15 @@ package labs.pm.data;
  
 public enum Rating {
     
+    
+     private String stars;
+     /**
+     * Constructs a {@code Rating} with the specified Unicode star representation.
+     * 
+     * @param stars Unicode characters representing the rating stars
+     */
+    private Rating(String stars) {
+        this.stars = stars;
+    }
+    
 }
