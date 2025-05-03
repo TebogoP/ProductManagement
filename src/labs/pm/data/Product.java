@@ -70,6 +70,11 @@ public class Product {
         return name;
     }
 
+    /**
+     * Sets the name for this product.
+     * 
+     * @param name the product name to set
+     */
     public void setName(final String name) {
         this.name = name;
     }
