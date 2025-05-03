@@ -41,6 +41,7 @@ public class Shop {
         p1.setPrice(BigDecimal.valueOf(1.99));
         
         System.out.println(p1.getId()+" "+ p1.getName()+" "+p1.getPrice()+" "+p1.getDiscount());
+        System.out.println(p1); // Uses the toString method in Product
         
     }
     
