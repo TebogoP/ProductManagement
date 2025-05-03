@@ -44,6 +44,12 @@ public class Product {
      */
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
 
+    /**
+     * Calculates discount based on a product price and
+     * {@link DISCOUNT_RATE discount rate}.
+     *
+     * @return a {@link java.math.BigDecimal BigDecimal} value of the discount
+     */
     public BigDecimal getDiscount() {
         return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
     }
