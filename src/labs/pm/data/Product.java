@@ -66,6 +66,11 @@ public class Product {
         this.id = id;
     }
 
+    /**
+     * Gets the name of this product.
+     * 
+     * @return the product name
+     */
     public String getName() {
         return name;
     }
