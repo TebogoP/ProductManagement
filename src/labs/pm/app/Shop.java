@@ -20,7 +20,8 @@ import java.math.BigDecimal;
 import labs.pm.data.Product;
 
 /**
- *
+ * @(code Shop) class represents an application that manages Products
+ * @version 4 
  * @author User
  */
 public class Shop {
