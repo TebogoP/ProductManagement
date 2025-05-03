@@ -17,6 +17,7 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+import static java.math.RoundingMode.HALF_UP;
 
 /**
  *
@@ -27,7 +28,14 @@ public class Product {
     private int id;
     private String name;
     private BigDecimal price;
+    
+    public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
 
+    public BigDecimal getDiscount() {
+        return price.multiply(DISCOUNT_RATE).setScale(2,HALF_UP);
+    }
+    
+    
     public Product() {
     }
     
@@ -37,7 +45,7 @@ public class Product {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -45,7 +53,7 @@ public class Product {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(final String name) {
         this.name = name;
     }
 
@@ -53,7 +61,8 @@ public class Product {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(final BigDecimal price) {
+//        price = BigDecimal.ONE; This overrides whatever value is set to 1. Making it a constant price of 1
         this.price = price;
     }
     
