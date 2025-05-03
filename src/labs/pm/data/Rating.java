@@ -41,4 +41,13 @@ public enum Rating {
         this.stars = stars;
     }
     
+    /**
+     * Gets the Unicode star representation of this rating.
+     * 
+     * @return the Unicode stars as a string
+     */
+    public String getStars() {
+        return stars;
+    }
+    
 }
