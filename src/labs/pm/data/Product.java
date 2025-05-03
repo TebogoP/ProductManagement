@@ -20,13 +20,14 @@ import java.math.BigDecimal;
 import static java.math.RoundingMode.HALF_UP;
 
 /**
- * @{code Product} class represents properties of product objects in a Product
+ * {@code Product} class represents properties of product objects in a Product
  * Management system
  * <br>
  * Each product has an id, name, and price
  * <br>
  * Each product can have a discount, calculated based on a
  * {@link DISCOUNT_RATE discount rate }
+ *
  * @version 4
  * @author User
  */
@@ -77,6 +78,11 @@ public class Product {
         return price;
     }
 
+    /**
+     * Sets the price for this product.
+     *
+     * @param price the product price to set
+     */
     public void setPrice(final BigDecimal price) {
 //        price = BigDecimal.ONE; This overrides whatever value is set to 1. Making it a constant price of 1
         this.price = price;
