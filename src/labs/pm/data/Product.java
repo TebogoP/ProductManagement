@@ -74,6 +74,11 @@ public class Product {
         this.name = name;
     }
 
+    /**
+     * Gets the price of this product.
+     *
+     * @return the product price
+     */
     public BigDecimal getPrice() {
         return price;
     }
