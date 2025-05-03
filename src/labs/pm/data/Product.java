@@ -20,7 +20,14 @@ import java.math.BigDecimal;
 import static java.math.RoundingMode.HALF_UP;
 
 /**
- *
+ * @{code Product} class represents properties of product objects in a Product
+ * Management system
+ * <br>
+ * Each product has an id, name, and price
+ * <br>
+ * Each product can have a discount, calculated based on a
+ * {@link DISCOUNT_RATE discount rate }
+ * @version 4
  * @author User
  */
 public class Product {
@@ -28,18 +35,21 @@ public class Product {
     private int id; //Default value 0
     private String name; //Default value null
     private BigDecimal price = BigDecimal.ZERO; //Default value null. Intialized so that getDiscount doesn't present NullPointerException at runtime
-    
+
+    /**
+     * A constant that defines a {@link java.math.BigDecimal BigDecimal} value
+     * of the discount rate.
+     * <br>
+     * Discount rate is 10%
+     */
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
 
     public BigDecimal getDiscount() {
-        return price.multiply(DISCOUNT_RATE).setScale(2,HALF_UP);
+        return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
     }
-    
-    
+
     public Product() {
     }
-    
-    
 
     public int getId() {
         return id;
@@ -65,5 +75,5 @@ public class Product {
 //        price = BigDecimal.ONE; This overrides whatever value is set to 1. Making it a constant price of 1
         this.price = price;
     }
-    
+
 }
