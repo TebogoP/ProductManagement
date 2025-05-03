@@ -20,14 +20,17 @@ import java.math.BigDecimal;
 import labs.pm.data.Product;
 
 /**
- * @{code Shop} class represents an application that manages Products
+ * {@code Shop} class represents an application that manages Products
  * @version 4 
  * @author User
  */
 public class Shop {
 
     /**
-     * @param args the command line arguments
+     * Main method that serves as the entry point for the application.
+     * Initializes the product management system and performs operations.
+     * 
+     * @param args the command line arguments provided to the application
      */
     public static void main(String[] args) {
         // TODO code application logic here
