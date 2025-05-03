@@ -35,7 +35,7 @@ public class Product {
 
     private int id; //Default value 0
     private String name; //Default value null
-    private BigDecimal price = BigDecimal.ZERO; //Default value null. Intialized so that getDiscount doesn't present NullPointerException at runtime
+    private BigDecimal price ; //Default value null. 
     private Rating rating;
 
     /**
@@ -59,8 +59,10 @@ public class Product {
     /**
      * Default constructor for creating a Product instance.
      * Initializes a product with default values.
+     * Initializes price so that getDiscount doesn't present NullPointerException at runtime
      */
     public Product() {
+        this.price  = BigDecimal.ZERO;
         this.rating = Rating.NOT_RATED;
     }
     
@@ -137,4 +139,15 @@ public class Product {
         this.price = price;
     }
 
+    /**
+     * Returns a string representation of this product.
+     * 
+     * @return a string with product details
+     */
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", name=" + name + ", price=" + price + ", rating=" + rating + '}';
+    }
+    
+    
 }
