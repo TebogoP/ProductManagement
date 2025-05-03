@@ -58,6 +58,11 @@ public class Product {
     public Product() {
     }
 
+    /**
+     * Gets the unique identifier of this product.
+     * 
+     * @return the product id
+     */
     public int getId() {
         return id;
     }
