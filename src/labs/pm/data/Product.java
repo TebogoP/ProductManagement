@@ -55,6 +55,10 @@ public class Product {
         return price.multiply(DISCOUNT_RATE).setScale(2, HALF_UP);
     }
 
+    /**
+     * Default constructor for creating a Product instance.
+     * Initializes a product with default values.
+     */
     public Product() {
     }
 
