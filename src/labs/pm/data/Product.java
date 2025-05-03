@@ -67,6 +67,11 @@ public class Product {
         return id;
     }
 
+    /**
+     * Sets the unique identifier for this product.
+     * 
+     * @param id the product id to set
+     */
     public void setId(final int id) {
         this.id = id;
     }
