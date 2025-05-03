@@ -36,6 +36,7 @@ public class Product {
     private int id; //Default value 0
     private String name; //Default value null
     private BigDecimal price = BigDecimal.ZERO; //Default value null. Intialized so that getDiscount doesn't present NullPointerException at runtime
+    private Rating rating;
 
     /**
      * A constant that defines a {@link java.math.BigDecimal BigDecimal} value
@@ -60,6 +61,25 @@ public class Product {
      * Initializes a product with default values.
      */
     public Product() {
+        this.rating = Rating.NOT_RATED;
+    }
+    
+    /**
+     * Gets the rating of this product.
+     * 
+     * @return the product rating
+     */
+    public Rating getRating() {
+        return rating;
+    }
+    
+    /**
+     * Sets the rating for this product.
+     * 
+     * @param rating the product rating to set
+     */
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 
     /**
