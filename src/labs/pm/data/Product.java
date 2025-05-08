@@ -91,6 +91,15 @@ public class Product {
         this.price = price;
         this.rating = rating;
     }
+    
+    /**
+     * Updates the rating of this product.
+     *
+     * @param rating The new rating to apply to the product
+     */
+    public void applyRating(Rating rating) {
+        this.rating = rating;
+    }
 
 
     /**
