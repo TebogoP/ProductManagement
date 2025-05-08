@@ -52,4 +52,16 @@ public class Food extends Product {
         this.bestBefore = bestBefore;
     }
 
+     /**
+     * Returns a string representation of food product.
+     *
+     * @return a string with food details
+     */
+    @Override
+    public String toString() {
+        return super.toString() +", " +bestBefore; 
+    }
+    
+    
+
 }
