@@ -75,4 +75,14 @@ public enum Rating {
         return stars;
     }
     
+    /**
+     * Returns a string representation of this rating.
+     * 
+     * @return the Unicode star representation of this rating
+     */
+    @Override
+    public String toString() {
+        return stars;
+    }
+    
 }
