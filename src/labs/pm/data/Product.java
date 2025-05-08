@@ -96,9 +96,10 @@ public class Product {
      * Updates the rating of this product.
      *
      * @param rating The new rating to apply to the product
+     * @return a new Product
      */
-    public void applyRating(Rating rating) {
-        this.rating = rating;
+    public Product applyRating(Rating rating) {
+        return new Product(getId(), getName(),getPrice(), rating);
     }
 
 
