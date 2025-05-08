@@ -35,7 +35,7 @@ public class Product {
 
     private int id; //Default value 0
     private String name; //Default value null
-    private BigDecimal price ; //Default value null. 
+    private BigDecimal price; //Default value null. 
     private Rating rating;
 
     /**
@@ -58,26 +58,53 @@ public class Product {
 
     /**
      * Default constructor for creating a Product instance.
-     * Initializes a product with default values.
-     * Initializes price so that getDiscount doesn't present NullPointerException at runtime
+     * Initializes a product with default values (id=0, name="no name", price=0).
+     * Initializes price so that getDiscount doesn't present NullPointerException at runtime.
      */
     public Product() {
-        this.price  = BigDecimal.ZERO;
-        this.rating = Rating.NOT_RATED;
+        this(0, "no name", BigDecimal.ZERO);
     }
-    
+
+    /**
+     * Constructor for creating a Product with specified id, name, and price.
+     * The rating is set to NOT_RATED by default.
+     *
+     * @param id    The unique identifier for the product
+     * @param name  The name of the product
+     * @param price The price of the product
+     */
+    public Product(int id, String name, BigDecimal price) {
+        this(id, name, price, Rating.NOT_RATED);
+    }
+
+    /**
+     * Constructor for creating a Product with all attributes specified.
+     *
+     * @param id     The unique identifier for the product
+     * @param name   The name of the product
+     * @param price  The price of the product
+     * @param rating The rating of the product
+     */
+    public Product(int id, String name, BigDecimal price, Rating rating) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.rating = rating;
+    }
+
+
     /**
      * Gets the rating of this product.
-     * 
+     *
      * @return the product rating
      */
     public Rating getRating() {
         return rating;
     }
-    
+
     /**
      * Sets the rating for this product.
-     * 
+     *
      * @param rating the product rating to set
      */
     public void setRating(Rating rating) {
@@ -86,7 +113,7 @@ public class Product {
 
     /**
      * Gets the unique identifier of this product.
-     * 
+     *
      * @return the product id
      */
     public int getId() {
@@ -95,7 +122,7 @@ public class Product {
 
     /**
      * Sets the unique identifier for this product.
-     * 
+     *
      * @param id the product id to set
      */
     public void setId(final int id) {
@@ -104,7 +131,7 @@ public class Product {
 
     /**
      * Gets the name of this product.
-     * 
+     *
      * @return the product name
      */
     public String getName() {
@@ -113,7 +140,7 @@ public class Product {
 
     /**
      * Sets the name for this product.
-     * 
+     *
      * @param name the product name to set
      */
     public void setName(final String name) {
@@ -138,16 +165,15 @@ public class Product {
 //        price = BigDecimal.ONE; This overrides whatever value is set to 1. Making it a constant price of 1
         this.price = price;
     }
-
+    
     /**
      * Returns a string representation of this product.
-     * 
+     *
      * @return a string with product details
      */
     @Override
     public String toString() {
         return "Product{" + "id=" + id + ", name=" + name + ", price=" + price + ", rating=" + rating + '}';
     }
-    
-    
+
 }
