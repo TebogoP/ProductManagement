@@ -16,10 +16,24 @@
  */
 package labs.pm.data;
 
+import java.math.BigDecimal;
+
 /**
+ * Represents a drink product in the inventory system.
+ * Extends the base Product class.
  *
  * @author User
  */
 public class Drink extends Product {
-    
+    /**
+     * Constructor for creating a Drink with specified attributes.
+     *
+     * @param id     The unique identifier for the drink
+     * @param name   The name of the drink
+     * @param price  The price of the drink
+     * @param rating The rating of the drink
+     */
+    public Drink(int id, String name, BigDecimal price, Rating rating) {
+        super(id, name, price, rating);
+    }
 }
