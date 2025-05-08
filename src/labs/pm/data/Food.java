@@ -44,10 +44,11 @@ public class Food extends Product {
      * @param id         The unique identifier for the food product
      * @param name       The name of the food product
      * @param price      The price of the food product
+     * @param rating     The rating of the food product
      * @param bestBefore The expiration date of the food product
      */
-    public Food(int id, String name, BigDecimal price, LocalDate bestBefore) {
-        super(id, name, price);
+    public Food(int id, String name, BigDecimal price, Rating rating, LocalDate bestBefore) {
+        super(id, name, price, rating);
         this.bestBefore = bestBefore;
     }
 
