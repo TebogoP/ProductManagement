@@ -16,10 +16,22 @@
  */
 package labs.pm.data;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author User
  */
 public class Food extends Product {
+    private LocalDate bestBefore;
+
+    /**
+     * Get the value of bestBefore date of the product
+     *
+     * @return the value of bestBefore
+     */
+    public LocalDate getBestBefore() {
+        return bestBefore;
+    }
 
 }
