@@ -64,6 +64,16 @@ public interface Rateable<T> {
         return (stars >= 0 && stars <= 5) ? Rating.values()[stars] : DEFAULT_RATING;
     }
     
+    /**
+     * Applies a star rating to this object by converting the integer value to a Rating enum.
+     * This is a convenience method that delegates to applyRating(Rating).
+     *
+     * @param stars The number of stars (0-5)
+     * @return The object instance for method chaining
+     */
+    public default T applyRating(int stars) {
+        return applyRating(convert(stars));
+    }
     
     
 }
