@@ -53,6 +53,17 @@ public interface Rateable<T> {
     public default Rating getRating() {
         return DEFAULT_RATING;
     }
+    /**
+     * Converts an integer stars value to the corresponding Rating enum.
+     * If the stars value is outside the valid range (0-5), returns DEFAULT_RATING.
+     *
+     * @param stars The number of stars to convert
+     * @return The corresponding Rating enum value
+     */    
+    public static Rating convert(int stars) {
+        return (stars >= 0 && stars <= 5) ? Rating.values()[stars] : DEFAULT_RATING;
+    }
+    
     
     
 }
