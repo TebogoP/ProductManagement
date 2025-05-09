@@ -24,5 +24,14 @@ package labs.pm.data;
  */
 public class Review {
     
+    /**
+     * The rating assigned in this review
+     */
+    private Rating rating;
+    
+    /**
+     * The textual comments associated with this review
+     */
+    private String comments;
     
 }
