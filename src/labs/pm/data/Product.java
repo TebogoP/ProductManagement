@@ -18,6 +18,7 @@ package labs.pm.data;
 
 import java.math.BigDecimal;
 import static java.math.RoundingMode.HALF_UP;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -95,12 +96,13 @@ public abstract class Product {
     }
 
     /**
-     * Applies the specified rating to the product.
-     * This is an abstract method that must be implemented by all subclasses.
-     * Different product types may handle ratings differently.
+     * Applies the specified rating to the product. This is an abstract method
+     * that must be implemented by all subclasses. Different product types may
+     * handle ratings differently.
      *
      * @param rating The rating to apply to this product
-     * @return A new Product instance with the updated rating, allowing for method chaining
+     * @return A new Product instance with the updated rating, allowing for
+     * method chaining
      */
     public abstract Product applyRating(Rating rating);
 //    {
@@ -245,5 +247,14 @@ public abstract class Product {
 //        }
 //        return Objects.equals(this.name, other.name);
 //    }
+
+    /**
+     * Get the value of bestBefore date of the product
+     *
+     * @return the value of bestBefore
+     */
+    public LocalDate getBestBefore() {
+        return LocalDate.now();
+    }
 
 }
