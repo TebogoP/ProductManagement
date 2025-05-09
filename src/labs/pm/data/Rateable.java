@@ -28,6 +28,11 @@ package labs.pm.data;
  * @author User
  */
 public interface Rateable<T> {
+    /**
+     * The default rating to be used when no rating is specified.
+     */
+    public static final Rating DEFAULT_RATING = Rating.NOT_RATED;
+    
     
     
 }
