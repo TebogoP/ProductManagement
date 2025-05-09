@@ -52,4 +52,23 @@ public class Review {
         this.rating = rating;
     }
     
+     /**
+     * Gets the comments associated with this review.
+     *
+     * @return The comments
+     */
+    public String getComments() {
+        return comments;
+    }
+    
+    /**
+     * Sets the comments for this review.
+     *
+     * @param comments The new comments to assign
+     */
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+    
+    
 }
