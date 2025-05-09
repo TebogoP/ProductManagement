@@ -28,45 +28,47 @@ package labs.pm.data;
  * @author User
  */
 public interface Rateable<T> {
-    
+
     /**
      * The default rating to be used when no rating is specified.
      */
     public static final Rating DEFAULT_RATING = Rating.NOT_RATED;
-    
+
     /**
-     * Applies a rating to this object.
-     * This is the core abstract method that implementing classes must provide.
+     * Applies a rating to this object. This is the core abstract method that
+     * implementing classes must provide.
      *
      * @param rating The rating to apply
      * @return The object instance for method chaining
      */
     T applyRating(Rating rating);// By default methods are public abstract
-    
+
     /**
-     * Gets the current rating of this object.
-     * By default, returns the DEFAULT_RATING.
-     * Implementing classes should override this method to return their actual rating.
+     * Gets the current rating of this object. By default, returns the
+     * DEFAULT_RATING. Implementing classes should override this method to
+     * return their actual rating.
      *
      * @return The current rating value
      */
     public default Rating getRating() {
         return DEFAULT_RATING;
     }
+
     /**
-     * Converts an integer stars value to the corresponding Rating enum.
-     * If the stars value is outside the valid range (0-5), returns DEFAULT_RATING.
+     * Converts an integer stars value to the corresponding Rating enum. If the
+     * stars value is outside the valid range (0-5), returns DEFAULT_RATING.
      *
      * @param stars The number of stars to convert
      * @return The corresponding Rating enum value
-     */    
+     */
     public static Rating convert(int stars) {
         return (stars >= 0 && stars <= 5) ? Rating.values()[stars] : DEFAULT_RATING;
     }
-    
+
     /**
-     * Applies a star rating to this object by converting the integer value to a Rating enum.
-     * This is a convenience method that delegates to applyRating(Rating).
+     * Applies a star rating to this object by converting the integer value to a
+     * Rating enum. This is a convenience method that delegates to
+     * applyRating(Rating).
      *
      * @param stars The number of stars (0-5)
      * @return The object instance for method chaining
@@ -74,6 +76,4 @@ public interface Rateable<T> {
     public default T applyRating(int stars) {
         return applyRating(convert(stars));
     }
-    
-    
 }
