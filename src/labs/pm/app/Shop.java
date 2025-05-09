@@ -53,14 +53,18 @@ public class Shop {
         System.out.println(p6.equals(p7)); // Will return True if check instance of Product but return False if comparing classes
         Product p8 = p4.applyRating(Rating.FIVE_STAR);
         Product p9 = p1.applyRating(Rating.TWO_STAR);
-        
-        if (p3 instanceof Food){ //getBestBefore exists only in Food and not in Product
-            ((Food)p3).getBestBefore(); // This can only be used because getBestBefore is only in Food
-        }
+
+//        if (p3 instanceof Food){ //getBestBefore exists only in Food and not in Product
+//            ((Food)p3).getBestBefore(); // This can only be used because getBestBefore is only in Food
+//        }
+
+        System.out.println("This now works because we made getBestBefore a parent level method allowing all subclasses to have access to it");
+        System.out.println("Before for P1 which is a drink: " + p1.getBestBefore());
+        System.out.println("Before for P3 which is a food: " + p3.getBestBefore());
+
 //        System.out.println("====================================================");
 //        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount());
 //        System.out.println(p1); // Uses the toString method in Product
-
         System.out.println("====================================================");
 //        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount() + " " + p1.getRating().getStars());
 //        System.out.println(p2.getId() + " " + p2.getName() + " " + p2.getPrice() + " " + p2.getDiscount() + " " + p2.getRating().getStars());
