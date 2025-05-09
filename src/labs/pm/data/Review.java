@@ -33,5 +33,23 @@ public class Review {
      * The textual comments associated with this review
      */
     private String comments;
+
+    /**
+     * Gets the rating assigned in this review.
+     *
+     * @return The rating
+     */
+    public Rating getRating() {
+        return rating;
+    }
+    
+    /**
+     * Sets the rating for this review.
+     *
+     * @param rating The new rating to assign
+     */
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
     
 }
