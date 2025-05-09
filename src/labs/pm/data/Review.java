@@ -70,5 +70,14 @@ public class Review {
         this.comments = comments;
     }
     
+    /**
+     * Returns a string representation of this review.
+     *
+     * @return A string containing the rating and comments
+     */
+    @Override
+    public String toString() {
+        return "Review{" + "rating=" + rating + ", comments='" + comments + "'}";
+    }
     
 }
