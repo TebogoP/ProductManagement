@@ -56,4 +56,19 @@ public class Drink extends Product {
                 ? super.getDiscount() : BigDecimal.ZERO;
     }
 
+    /**
+     * Applies the specified rating to this Drink product. Instead of modifying
+     * the current instance, this implementation follows the immutable object
+     * pattern by creating and returning a new Drink object with the updated
+     * rating.
+     *
+     * @param newRating The rating to apply to this drink
+     * @return A new Drink instance with all the same properties but the updated
+     * rating
+     */
+    @Override
+    public Product applyRating(Rating newRating) {
+        return new Drink(getId(), getName(), getPrice(), newRating);
+    }
+
 }
