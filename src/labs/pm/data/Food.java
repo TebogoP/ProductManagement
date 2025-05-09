@@ -20,12 +20,13 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
- * Represents a food product in the inventory system.
- * Extends the base Product class with additional attributes specific to food items.
+ * Represents a food product in the inventory system. Extends the base Product
+ * class with additional attributes specific to food items.
  *
  * @author User
  */
 public class Food extends Product {
+
     private LocalDate bestBefore;
 
     /**
@@ -36,15 +37,15 @@ public class Food extends Product {
     public LocalDate getBestBefore() {
         return bestBefore;
     }
-    
-     /**
-     * Constructor for creating a Food product with specified attributes.
-     * The rating is set to NOT_RATED by default.
+
+    /**
+     * Constructor for creating a Food product with specified attributes. The
+     * rating is set to NOT_RATED by default.
      *
-     * @param id         The unique identifier for the food product
-     * @param name       The name of the food product
-     * @param price      The price of the food product
-     * @param rating     The rating of the food product
+     * @param id The unique identifier for the food product
+     * @param name The name of the food product
+     * @param price The price of the food product
+     * @param rating The rating of the food product
      * @param bestBefore The expiration date of the food product
      */
     public Food(int id, String name, BigDecimal price, Rating rating, LocalDate bestBefore) {
@@ -52,16 +53,28 @@ public class Food extends Product {
         this.bestBefore = bestBefore;
     }
 
-     /**
+    /**
+     * Calculates the discount for this food product based on its best-before
+     * date. A discount is offered only on the day the product reaches its
+     * best-before date. On this day, the discount from the parent class is
+     * applied. On all other days, no discount (zero) is applied.
+     *
+     * @return The discount amount as a BigDecimal, or BigDecimal.ZERO if not on
+     * best-before date
+     */
+    @Override
+    public BigDecimal getDiscount() {
+        return (bestBefore.isEqual(LocalDate.now())) ? super.getDiscount() : BigDecimal.ZERO;
+    }
+
+    /**
      * Returns a string representation of food product.
      *
      * @return a string with food details
      */
     @Override
     public String toString() {
-        return super.toString() +", " +bestBefore; 
+        return super.toString() + ", " + bestBefore;
     }
-    
-    
 
 }
