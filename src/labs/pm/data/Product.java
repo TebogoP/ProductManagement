@@ -33,7 +33,7 @@ import java.util.Objects;
  * @version 4
  * @author User
  */
-public abstract class Product {
+public abstract class Product implements Rateable<Product> {
 
     private int id; //Default value 0
     private String name; //Default value null
