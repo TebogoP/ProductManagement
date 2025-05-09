@@ -43,4 +43,16 @@ public interface Rateable<T> {
      */
     T applyRating(Rating rating);// By default methods are public abstract
     
+    /**
+     * Gets the current rating of this object.
+     * By default, returns the DEFAULT_RATING.
+     * Implementing classes should override this method to return their actual rating.
+     *
+     * @return The current rating value
+     */
+    public default Rating getRating() {
+        return DEFAULT_RATING;
+    }
+    
+    
 }
