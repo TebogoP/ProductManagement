@@ -218,12 +218,13 @@ public class Product {
         if (this == obj) {
             return true;
         }
-        if (obj != null && getClass() == obj.getClass()) {
+//        if (obj != null && getClass() == obj.getClass()) {
+        if (obj instanceof Product) {
             final Product other = (Product) obj;
             return this.id == other.id && Objects.equals(this.name, other.name);
         }
         return false;
-        
+
     }
 //    public boolean equals(Object obj) {
 //        if (this == obj) {
