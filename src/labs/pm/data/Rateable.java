@@ -28,11 +28,19 @@ package labs.pm.data;
  * @author User
  */
 public interface Rateable<T> {
+    
     /**
      * The default rating to be used when no rating is specified.
      */
     public static final Rating DEFAULT_RATING = Rating.NOT_RATED;
     
-    
+    /**
+     * Applies a rating to this object.
+     * This is the core abstract method that implementing classes must provide.
+     *
+     * @param rating The rating to apply
+     * @return The object instance for method chaining
+     */
+    T applyRating(Rating rating);// By default methods are public abstract
     
 }
