@@ -43,10 +43,10 @@ public class Shop {
 //        p1.setId(101);
 //        p1.setName("Tea");
 //        p1.setPrice(BigDecimal.valueOf(1.99));
-        Product p1 = new Product(101, "Tea", BigDecimal.valueOf(1.99));
+        Product p1 = new Drink(101, "Tea", BigDecimal.valueOf(1.99), Rating.THREE_STAR); //Changed due to abstract class. Can't have an instance of an abstract class
         Product p2 = new Drink(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
-        Product p3 = new Food(103, "Cake", BigDecimal.valueOf(1.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
-        Product p4 = new Product();
+        Product p3 = new Food(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
+        Product p4 = new Food(105, "Cookie", BigDecimal.valueOf(3.99), Rating.TWO_STAR, LocalDate.now());//Changed due to abstract class. Can't have an instance of an abstract class
         Product p5 = p3.applyRating(Rating.NOT_RATED);
         Product p6 = new Drink(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FOUR_STAR);
         Product p7 = new Food(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
