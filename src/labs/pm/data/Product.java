@@ -67,7 +67,6 @@ public abstract class Product implements Rateable<Product> {
 //    Product() {
 //        this(0, "no name", BigDecimal.ZERO);
 //    }
-
     /**
      * Constructor for creating a Product with specified id, name, and price.
      * The rating is set to NOT_RATED by default.
@@ -76,7 +75,7 @@ public abstract class Product implements Rateable<Product> {
      * @param name The name of the product
      * @param price The price of the product
      */
-     Product(int id, String name, BigDecimal price) {
+    Product(int id, String name, BigDecimal price) {
         this(id, name, price, Rating.NOT_RATED);
     }
 
@@ -88,7 +87,7 @@ public abstract class Product implements Rateable<Product> {
      * @param price The price of the product
      * @param rating The rating of the product
      */
-     Product(int id, String name, BigDecimal price, Rating rating) {
+    Product(int id, String name, BigDecimal price, Rating rating) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -108,12 +107,12 @@ public abstract class Product implements Rateable<Product> {
 //    {
 //        return new Product(getId(), getName(), getPrice(), rating);
 //    }
-
     /**
      * Gets the rating of this product.
      *
      * @return the product rating
      */
+    @Override
     public Rating getRating() {
         return rating;
     }
@@ -189,7 +188,7 @@ public abstract class Product implements Rateable<Product> {
      */
     @Override
     public String toString() {
-        return id + ", " + name + ", " + price + ", " + getDiscount() + ", " + rating.getStars() +", " + getBestBefore();
+        return id + ", " + name + ", " + price + ", " + getDiscount() + ", " + rating.getStars() + ", " + getBestBefore();
     }
 
     /**
