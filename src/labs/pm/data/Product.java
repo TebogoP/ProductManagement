@@ -104,7 +104,7 @@ public abstract class Product implements Rateable<Product> {
      * @return A new Product instance with the updated rating, allowing for
      * method chaining
      */
-    public abstract Product applyRating(Rating rating);
+//    public abstract Product applyRating(Rating rating);
 //    {
 //        return new Product(getId(), getName(), getPrice(), rating);
 //    }
