@@ -64,9 +64,9 @@ public abstract class Product {
      * price so that getDiscount doesn't present NullPointerException at
      * runtime.
      */
-    public Product() {
-        this(0, "no name", BigDecimal.ZERO);
-    }
+//    Product() {
+//        this(0, "no name", BigDecimal.ZERO);
+//    }
 
     /**
      * Constructor for creating a Product with specified id, name, and price.
@@ -76,7 +76,7 @@ public abstract class Product {
      * @param name The name of the product
      * @param price The price of the product
      */
-    public Product(int id, String name, BigDecimal price) {
+     Product(int id, String name, BigDecimal price) {
         this(id, name, price, Rating.NOT_RATED);
     }
 
@@ -88,7 +88,7 @@ public abstract class Product {
      * @param price The price of the product
      * @param rating The rating of the product
      */
-    public Product(int id, String name, BigDecimal price, Rating rating) {
+     Product(int id, String name, BigDecimal price, Rating rating) {
         this.id = id;
         this.name = name;
         this.price = price;
