@@ -219,8 +219,8 @@ public class Product {
             return true;
         }
 //        if (obj != null && getClass() == obj.getClass()) {
-        if (obj instanceof Product) {
-            final Product other = (Product) obj;
+        if (obj instanceof Product product) {
+            final Product other = product;
             return this.id == other.id && Objects.equals(this.name, other.name);
         }
         return false;
