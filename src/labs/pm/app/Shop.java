@@ -50,7 +50,7 @@ public class Shop {
         Product p5 = p3.applyRating(Rating.NOT_RATED);
         Product p6 = new Drink(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FOUR_STAR);
         Product p7 = new Food(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
-        System.out.println(p6.equals(p7));
+        System.out.println(p6.equals(p7)); 
 //        System.out.println("====================================================");
 //        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount());
 //        System.out.println(p1); // Uses the toString method in Product
@@ -63,10 +63,10 @@ public class Shop {
 //        System.out.println(p5.getId() + " " + p5.getName() + " " + p5.getPrice() + " " + p5.getDiscount() + " " + p5.getRating().getStars());
 
         System.out.println(p1); // Uses the toString method in Product
-        System.out.println(p2); // Uses the toString method in Product
-        System.out.println(p3); // Uses the toString method in Product
+        System.out.println(p2); // Uses the toString method in Drink
+        System.out.println(p3); // Uses the toString method in Food
         System.out.println(p4); // Uses the toString method in Product
-        System.out.println(p5); // Uses the toString method in Product
+        System.out.println(p5); // Uses the toString method in Food
     }
 
 }
