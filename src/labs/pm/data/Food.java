@@ -77,4 +77,19 @@ public class Food extends Product {
         return super.toString() + ", " + bestBefore;
     }
 
+    /**
+     * Applies the specified rating to this Food product. Instead of modifying
+     * the current instance, this implementation follows the immutable object
+     * pattern by creating and returning a new Food object with the updated
+     * rating.
+     *
+     * @param newRating The rating to apply to this food product
+     * @return A new Food instance with all the same properties but the updated
+     * rating
+     */
+    @Override
+    public Product applyRating(Rating newRating) {
+        return new Food(getId(), getName(), getPrice(), newRating, bestBefore);
+    }
+
 }
