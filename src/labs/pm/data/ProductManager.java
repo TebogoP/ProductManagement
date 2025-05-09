@@ -16,6 +16,9 @@
  */
 package labs.pm.data;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 /**
  * A class that manages the creation of various product types through factory methods.
  * This implementation demonstrates method overloading to create different product subtypes.
@@ -24,5 +27,30 @@ package labs.pm.data;
  */
 public class ProductManager {
     
+/**
+     * Creates a Food product with an expiration date.
+     * 
+     * @param id         The unique identifier for the product
+     * @param name       The name of the product
+     * @param price      The price of the product
+     * @param rating     The product rating
+     * @param bestBefore The expiration date of the food product
+     * @return           A new Food product instance
+     */
+    public Product createProduct(int id, String name, BigDecimal price, Rating rating, LocalDate bestBefore) {
+        return new Food(id, name, price, rating, bestBefore);
+    }
     
+     /**
+     * Creates a Drink product without an expiration date.
+     * 
+     * @param id     The unique identifier for the product
+     * @param name   The name of the product
+     * @param price  The price of the product
+     * @param rating The product rating
+     * @return       A new Drink product instance
+     */
+    public Product createProduct(int id, String name, BigDecimal price, Rating rating) {
+        return new Drink(id, name, price, rating);
+    }
 }
