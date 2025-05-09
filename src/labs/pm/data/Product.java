@@ -32,7 +32,7 @@ import java.util.Objects;
  * @version 4
  * @author User
  */
-public class Product {
+public abstract class Product {
 
     private int id; //Default value 0
     private String name; //Default value null
@@ -95,14 +95,17 @@ public class Product {
     }
 
     /**
-     * Updates the rating of this product.
+     * Applies the specified rating to the product.
+     * This is an abstract method that must be implemented by all subclasses.
+     * Different product types may handle ratings differently.
      *
-     * @param rating The new rating to apply to the product
-     * @return a new Product
+     * @param rating The rating to apply to this product
+     * @return A new Product instance with the updated rating, allowing for method chaining
      */
-    public Product applyRating(Rating rating) {
-        return new Product(getId(), getName(), getPrice(), rating);
-    }
+    public abstract Product applyRating(Rating rating);
+//    {
+//        return new Product(getId(), getName(), getPrice(), rating);
+//    }
 
     /**
      * Gets the rating of this product.
