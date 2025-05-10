@@ -17,7 +17,11 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * A class that manages the creation of various product types through factory
@@ -37,6 +41,32 @@ public class ProductManager {
      * The current review
      */
     private Review review;
+
+    /**
+     * The locale used for internationalization and formatting. Determines the
+     * language, country, and formatting conventions.
+     */
+    private Locale locale;
+
+    /**
+     * Resource bundle containing localized text messages. Provides access to
+     * externalized strings based on the current locale.
+     */
+    private ResourceBundle resourceBundle;
+
+    /**
+     * Formatter for dates and times according to the current locale. Used to
+     * format dates in a locale-specific manner.
+     */
+    private DateTimeFormatter dateFormat;
+
+    /**
+     * Formatter for monetary values according to the current locale. Used to
+     * format prices with appropriate currency symbols and decimal separators.
+     */
+    private NumberFormat moneyFormat;
+
+   
 
     /**
      * Creates a Food product with an expiration date.
@@ -78,7 +108,7 @@ public class ProductManager {
      * @return The updated product with the new rating applied
      */
     public Product reviewProduct(Product product, Rating rating, String comments) {
-        review = new Review(rating, comments);
+        this.review = new Review(rating, comments);
         this.product = product.applyRating(rating);
         return this.product;
     }
