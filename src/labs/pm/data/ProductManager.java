@@ -17,6 +17,7 @@
 package labs.pm.data;
 
 import java.math.BigDecimal;
+import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -123,5 +124,25 @@ public class ProductManager {
         this.review = new Review(rating, comments);
         this.product = product.applyRating(rating);
         return this.product;
+    }
+
+    /**
+     * Generates and prints a formatted report for the current product. The
+     * report includes the product's name, price (formatted as currency),
+     * rating, and best-before date according to the locale-specific formatting.
+     * All text is localized using the resource bundle configured for this
+     * ProductManager.
+     */
+    public void printProductReport() {
+        StringBuilder txt = new StringBuilder();
+        txt.append(
+                MessageFormat.format(
+                        resourceBundle.getString("product"),
+                        product.getName(),
+                        moneyFormat.format(product.getPrice()),
+                        product.getRating(),
+                        dateFormat.format(product.getBestBefore())
+                )
+        ).append("\n");
     }
 }
