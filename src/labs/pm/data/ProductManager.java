@@ -20,6 +20,7 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -66,7 +67,18 @@ public class ProductManager {
      */
     private NumberFormat moneyFormat;
 
-   
+    /**
+     * Constructs a ProductManager with the specified locale. Initializes all
+     * formatters and resource bundles for the given locale.
+     *
+     * @param locale The locale to use for internationalization
+     */
+    public ProductManager(Locale locale) {
+        this.locale = locale;
+        resourceBundle = ResourceBundle.getBundle("labs.pm.data.resources", locale);
+        dateFormat = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).localizedBy(locale);
+        moneyFormat = NumberFormat.getCurrencyInstance(locale);
+    }
 
     /**
      * Creates a Food product with an expiration date.
