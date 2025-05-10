@@ -18,6 +18,7 @@ package labs.pm.app;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Locale;
 import labs.pm.data.Product;
 import labs.pm.data.ProductManager;
 import labs.pm.data.Rating;
@@ -54,45 +55,52 @@ public class Shop {
 //        Product p8 = p4.applyRating(Rating.FIVE_STAR);
 //        Product p9 = p1.applyRating(Rating.TWO_STAR);
 //        System.out.println("====================================================");
-        ProductManager pm = new ProductManager();
-        Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.THREE_STAR); //Changed due to abstract class. Can't have an instance of an abstract class
-        Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
-        Product p3 = pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
-        Product p4 = pm.createProduct(105, "Cookie", BigDecimal.valueOf(3.99), Rating.TWO_STAR, LocalDate.now());//Changed due to abstract class. Can't have an instance of an abstract class
-        Product p5 = p3.applyRating(Rating.NOT_RATED);
-        Product p6 = pm.createProduct(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FOUR_STAR);
-        Product p7 = pm.createProduct(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
-        System.out.println(p6.equals(p7)); // Will return True if check instance of Product but return False if comparing classes
-        Product p8 = p4.applyRating(Rating.FIVE_STAR);
-        Product p9 = p1.applyRating(Rating.TWO_STAR);
+//        ProductManager pm = new ProductManager(;
+//        Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.THREE_STAR); //Changed due to abstract class. Can't have an instance of an abstract class
+//        Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
+//        Product p3 = pm.createProduct(103, "Cake", BigDecimal.valueOf(3.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
+//        Product p4 = pm.createProduct(105, "Cookie", BigDecimal.valueOf(3.99), Rating.TWO_STAR, LocalDate.now());//Changed due to abstract class. Can't have an instance of an abstract class
+//        Product p5 = p3.applyRating(Rating.NOT_RATED);
+//        Product p6 = pm.createProduct(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FOUR_STAR);
+//        Product p7 = pm.createProduct(104, "Chocolate", BigDecimal.valueOf(2.99), Rating.FIVE_STAR, LocalDate.now().plusDays(2));
+//        System.out.println(p6.equals(p7)); // Will return True if check instance of Product but return False if comparing classes
+//        Product p8 = p4.applyRating(Rating.FIVE_STAR);
+//        Product p9 = p1.applyRating(Rating.TWO_STAR);
 
 //        if (p3 instanceof Food){ //getBestBefore exists only in Food and not in Product
 //            ((Food)p3).getBestBefore(); // This can only be used because getBestBefore is only in Food
 //        }
 //        System.out.println("====================================================");
-        System.out.println("This now works because we made getBestBefore a parent level method allowing all subclasses to have access to it");
-        System.out.println("Before for P1 which is a drink: " + p1.getBestBefore());
-        System.out.println("Before for P3 which is a food: " + p3.getBestBefore());
+//        System.out.println("This now works because we made getBestBefore a parent level method allowing all subclasses to have access to it");
+//        System.out.println("Before for P1 which is a drink: " + p1.getBestBefore());
+//        System.out.println("Before for P3 which is a food: " + p3.getBestBefore());
 
 //        System.out.println("====================================================");
 //        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount());
 //        System.out.println(p1); // Uses the toString method in Product
-        System.out.println("====================================================");
+//        System.out.println("====================================================");
 //        System.out.println(p1.getId() + " " + p1.getName() + " " + p1.getPrice() + " " + p1.getDiscount() + " " + p1.getRating().getStars());
 //        System.out.println(p2.getId() + " " + p2.getName() + " " + p2.getPrice() + " " + p2.getDiscount() + " " + p2.getRating().getStars());
 //        System.out.println(p3.getId() + " " + p3.getName() + " " + p3.getPrice() + " " + p3.getDiscount() + " " + p3.getRating().getStars());
 //        System.out.println(p4.getId() + " " + p4.getName() + " " + p4.getPrice() + " " + p4.getDiscount() + " " + p4.getRating().getStars());
 //        System.out.println(p5.getId() + " " + p5.getName() + " " + p5.getPrice() + " " + p5.getDiscount() + " " + p5.getRating().getStars());
 
-        System.out.println(p1); // Uses the toString method in Drink
-        System.out.println(p2); // Uses the toString method in Drink
-        System.out.println(p3); // Uses the toString method in Food
-        System.out.println(p4); // Uses the toString method in Food
-        System.out.println(p5); // Uses the toString method in Food
-        System.out.println(p6); // Uses the toString method in Drink
-        System.out.println(p7); // Uses the toString method in Food
-        System.out.println(p8); // Uses the toString method in Food
-        System.out.println(p9); // Uses the toString method in Drink
+//        System.out.println(p1); // Uses the toString method in Drink
+//        System.out.println(p2); // Uses the toString method in Drink
+//        System.out.println(p3); // Uses the toString method in Food
+//        System.out.println(p4); // Uses the toString method in Food
+//        System.out.println(p5); // Uses the toString method in Food
+//        System.out.println(p6); // Uses the toString method in Drink
+//        System.out.println(p7); // Uses the toString method in Food
+//        System.out.println(p8); // Uses the toString method in Food
+//        System.out.println(p9); // Uses the toString method in Drink
+        
+         System.out.println("====================================================");
+        
+        ProductManager pm = new ProductManager(Locale.UK); //
+        Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED); 
+        pm.printProductReport();
+        
     }
 
 }
