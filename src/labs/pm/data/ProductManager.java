@@ -128,10 +128,13 @@ public class ProductManager {
 
     /**
      * Generates and prints a formatted report for the current product. The
-     * report includes the product's name, price (formatted as currency),
-     * rating, and best-before date according to the locale-specific formatting.
+     * report includes: - Product details: name, price (formatted as currency),
+     * rating, and best-before date - Review information: If a review exists,
+     * includes rating stars and comments; otherwise, displays a message
+     * indicating no reviews are available
+     *
      * All text is localized using the resource bundle configured for this
-     * ProductManager.
+     * ProductManager, and formatting follows the locale-specific conventions.
      */
     public void printProductReport() {
         StringBuilder txt = new StringBuilder();
@@ -144,5 +147,18 @@ public class ProductManager {
                         dateFormat.format(product.getBestBefore())
                 )
         ).append("\n");
+        if (review != null) {
+            txt.append(
+                    MessageFormat.format(
+                            resourceBundle.getString("review"),
+                            review.getRating().getStars(),
+                            review.getComments()
+                    )
+            );
+        } else {
+            txt.append(resourceBundle.getString("no.review"));
+        }
+        txt.append("\n");
+        System.out.println(txt);
     }
 }
