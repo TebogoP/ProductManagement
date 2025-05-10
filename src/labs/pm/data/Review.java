@@ -23,7 +23,8 @@ package labs.pm.data;
  * @author User
  */
 public class Review {
-    
+
+        
     /**
      * The rating assigned in this review
      */
@@ -41,6 +42,17 @@ public class Review {
      */
     public Rating getRating() {
         return rating;
+    }
+    
+     /**
+     * Constructs a new Review with the specified rating and comments.
+     *
+     * @param rating The rating for this review
+     * @param comments The comments for this review
+     */
+    public Review(Rating rating, String comments) {
+        this.rating = rating;
+        this.comments = comments;
     }
     
     /**
